@@ -247,57 +247,142 @@ const TimelineSection = () => (
 )
 
 const TeamsSection = () => {
-  const [selectedTeam, setSelectedTeam] = useState("Technical Core")
+  const [selectedTeam, setSelectedTeam] = useState("Core Team")
 
   const teams = {
-    "Technical Core": [
+    "Core Team": [
       {
-        name: "Aditya T",
-        role: "Technical Team",
-        image: "/professional-male-developer.png",
+        name: "Mithun S",
+        role: "President",
+        image: "/mithun.png",
         
       },
       {
-        name: "Mayank Kumar Singh",
-        role: "Technical Team",
-        image: "/professional-male-developer.png",
+        name: "Kiran M S",
+        role: "Vice President",
+        image: "/kiran.png",
         
       },
       {
-        name: "Snehil Kashyap",
-        role: "Technical Team",
-        image: "/professional-male-developer.png",
+        name: "Srinidhi S",
+        role: "Vice President",
+        image: "/srinidhi.png",
         
       },
       {
-        name: "Sanjay M",
-        role: "Technical Team",
-        image: "/professional-male-developer.png",
+        name: "Harsh S",
+        role: "Vice President",
+        image: "/harsh.png",
         
       },
       {
-        name: "Darshan S Gowda",
-        role: "Technical Team",
-        image: "/professional-male-developer.png",
+        name: "Jai Krishna Prasath D",
+        role: "Secretary",
+        image: "/jai.png",
+       
+      },
+
+      {
+        name: "Sarvesh Raghav B",
+        role: "Operations Head",
+        image: "/raghav1.png",
+       
+      },
+
+      {
+        name: "Ashika Haseen S",
+        role: "Treasurer",
+        image: "/ashika.png",
+       
+      },
+
+      {
+        name: "Nirrmal G",
+        role: "Joint Secretary",
+        image: "/nirrms.png",
        
       },
     ],
-    "Publicity Core": [
+    "Executive Team": [
       {
-        name: "Team Member",
-        role: "Publicity Team",
-        image: "/professional-team-member.png",
+        name: "Johan A",
+        role: "Executive Associative",
+        image: "/johan.png",
+        
+      },
+     {
+        name: "Aravinth T",
+        role: "Executive Associative",
+        image: "/aravinth.png",
+        
+      },
+     {
+        name: "Shrinithi Dasarathy",
+        role: "Executive Associative",
+        image: "/shrinithi.png",
+        
+      },
+
+     {
+        name: "Kavya K P",
+        role: "Executive Associative",
+        image: "/kavya.png",
+        
+      },
+     {
+        name: "Mirthun K S",
+        role: "Executive Member",
+        image: "/mirthun.png",
+        
+      },
+     {
+        name: "Shree Kowsik S B",
+        role: "Executive Member",
+        image: "/kowsik.png",
+        
+      },
+
+     {
+        name: "Salai B Dharshini",
+        role: "Executive Member",
+        image: "/salai.png",
+        
+      },
+
+     {
+        name: "C Dhinesh",
+        role: "Executive Member",
+        image: "/dhinesh.png",
+        
+      },
+
+      {
+        name: "Alagu Manikandan",
+        role: "Executive Member",
+        image: "/am.png",
+        
+      },
+     {
+        name: "Rethinagiri S",
+        role: "Executive Member",
+        image: "/rethinagiri.png",
+        
+      },
+    
+      {
+        name: "Arpitha Paraneetharan",
+        role: "Executive Member",
+        image: "/arpritha.png",
+        
+      },
+      {
+        name: "Kesava Navya",
+        role: "Executive Member",
+        image: "/kesava.png",
         
       },
     ],
-    "Organizational Core": [
-      {
-        name: "Team Member",
-        role: "Organizational Team",
-        image: "/professional-team-member.png",
-        
-      },
-    ],
+
     "Web Team": [
       {
         name: "Sharmile S",
@@ -315,13 +400,120 @@ const TeamsSection = () => {
         image: "/jaswanth.png",
       },
     ],
-    "Faculty Coordinator": [
+
+        "Design Team": [
       {
-        name: "Faculty Member",
-        role: "Faculty Coordinator",
-        image: "/placeholder-38bbr.png",
+        name: "Aneesh Kumar R",
+        role: "Design Team Head",
+        image: "/aneesh.png",
         
       },
+      {
+        name: "Nantha Kishore S",
+        role: "Design Team Member",
+        image: "/nantha.png",
+        
+      },
+      {
+        name: "Kanisha S",
+        role: "Design Team Head",
+        image: "/kanisha.png",
+        
+      },
+      {
+        name: "Rajeshwari B C",
+        role: "Design Team Member",
+        image: "/raje.png",
+        
+      },
+      {
+        name: "Kavinithi R P",
+        role: "Design Team Member",
+        image: "/kavinithi.png",
+        
+      },
+    ],
+      "Content Team": [
+      {
+        name: "Sadhana S",
+        role: "Content Team Head",
+        image: "/sadhana.png",
+        
+      },
+      {
+        name: "Mona Shree",
+        role: "Content Team Member",
+        image: "/mona.png",
+        
+      },
+      {
+        name: "Vaishnavi Chitraa M",
+        role: "Content Team Member",
+        image: "/vaishnavi.png",
+        
+      },
+      {
+        name: "Tharun Kumar T",
+        role: "Content Team Member",
+        image: "/tk.png",
+        
+      },
+    ],
+        "Marketting And Outreach Team": [
+      {
+        name: "Shashank N S",
+        role: "Marketting Team Head",
+        image: "/shashank.png",
+        
+      },
+      {
+        name: "Hariganesh A",
+        role: "Outreach Team Head",
+        image: "/hari.png",
+        
+      },
+      {
+        name: "Priyanka A",
+        role: "Marketting Team Member",
+        image: "/priyanka.png",
+        
+      },
+      {
+        name: "Sharmila M",
+        role: "Marketting Team Member",
+        image: "/sharmila.png",
+        
+      },
+      {
+        name: "Bhavana G",
+        role: "Marketting Team Member",
+        image: "/bhavana.png",
+        
+      },
+    ],
+    "Photography Team": [
+      {
+        name: "V Raghav",
+        role: "Photography Team Member",
+        image: "/raghav.png",
+        
+      },
+    ],
+          
+    "Faculty Co-ordinator": [
+      {
+        name: "DR.G Janaka Sudha",
+        role: "Faculty Coordinator",
+        image: "/janakasudha.png",
+        
+      },
+      {
+        name: "MR.K Srinivasan",
+        role: "Faculty Coordinator",
+        image: "/srinivasan.png",
+        
+      },
+   
     ],
   }
 
@@ -467,6 +659,11 @@ const FAQSection = () => {
       answer:
         "Bring your laptop, chargers, any hardware you might need, and your enthusiasm! We'll provide food, drinks, internet, and a great venue. Don't forget to bring a valid ID for registration.",
     },
+    {
+      question: "What is the prize pool?",
+      answer:
+        "Hackerrupt '25 offers a grand prize pool worth over ₹30,000, along with exclusive goodies, internship opportunities, and certificates for top-performing teams.",
+    },
   ]
 
   return (
@@ -506,8 +703,18 @@ const GallerySection = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => setCurrentIndex((p) => (p + 1) % galleryImages.length);
-  const prevSlide = () => setCurrentIndex((p) => (p - 1 + galleryImages.length) % galleryImages.length);
+  const nextSlide = () =>
+    setCurrentIndex((p) => (p + 1) % galleryImages.length);
+  const prevSlide = () =>
+    setCurrentIndex((p) => (p - 1 + galleryImages.length) % galleryImages.length);
+
+  // ✅ Auto-play effect (carousel slideshow)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((p) => (p + 1) % galleryImages.length);
+    }, 4000); // 4 seconds per slide
+    return () => clearInterval(interval);
+  }, [galleryImages.length]);
 
   return (
     <section id="gallery" className="relative z-10 w-full min-h-screen py-12 px-4">
@@ -520,7 +727,7 @@ const GallerySection = () => {
         <div className="relative overflow-hidden rounded-xl border border-green-500/40 bg-black/30 backdrop-blur-sm shadow-xl">
           {/* Track */}
           <div
-            className="flex transition-transform duration-700"
+            className="flex transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {galleryImages.map((img, i) => (
@@ -538,7 +745,8 @@ const GallerySection = () => {
           <button
             onClick={prevSlide}
             aria-label="Previous"
-            className="absolute top-1/2 left-2 sm:left-4 -translate-y-1/2 h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full bg-green-500 text-black text-lg sm:text-xl shadow-lg hover:bg-green-400 transition"
+            className="absolute top-1/2 left-2 sm:left-4 -translate-y-1/2 h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 
+                       rounded-full bg-green-500 text-black text-lg sm:text-xl shadow-lg hover:bg-green-400 transition"
           >
             &#8592;
           </button>
@@ -547,7 +755,8 @@ const GallerySection = () => {
           <button
             onClick={nextSlide}
             aria-label="Next"
-            className="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2 h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full bg-green-500 text-black text-lg sm:text-xl shadow-lg hover:bg-green-400 transition"
+            className="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2 h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 
+                       rounded-full bg-green-500 text-black text-lg sm:text-xl shadow-lg hover:bg-green-400 transition"
           >
             &#8594;
           </button>
@@ -578,7 +787,7 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
         
         {/* Column 1: Branding */}
-        <div>
+        <div className="pl-6 md:pl-12">
           <h2 className="text-2xl font-bold bg-gradient-to-r from-green-400 to-purple-500 bg-clip-text text-transparent">
             Hackerrupt '25
           </h2>
