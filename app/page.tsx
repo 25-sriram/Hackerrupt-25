@@ -255,31 +255,31 @@ const TeamsSection = () => {
         name: "Aditya T",
         role: "Technical Team",
         image: "/professional-male-developer.png",
-        knowMe: "#",
+        
       },
       {
         name: "Mayank Kumar Singh",
         role: "Technical Team",
         image: "/professional-male-developer.png",
-        knowMe: "#",
+        
       },
       {
         name: "Snehil Kashyap",
         role: "Technical Team",
         image: "/professional-male-developer.png",
-        knowMe: "#",
+        
       },
       {
         name: "Sanjay M",
         role: "Technical Team",
         image: "/professional-male-developer.png",
-        knowMe: "#",
+        
       },
       {
         name: "Darshan S Gowda",
         role: "Technical Team",
         image: "/professional-male-developer.png",
-        knowMe: "#",
+       
       },
     ],
     "Publicity Core": [
@@ -287,7 +287,7 @@ const TeamsSection = () => {
         name: "Team Member",
         role: "Publicity Team",
         image: "/professional-team-member.png",
-        knowMe: "#",
+        
       },
     ],
     "Organizational Core": [
@@ -295,15 +295,24 @@ const TeamsSection = () => {
         name: "Team Member",
         role: "Organizational Team",
         image: "/professional-team-member.png",
-        knowMe: "#",
+        
       },
     ],
     "Web Team": [
       {
-        name: "Team Member",
-        role: "Web Team",
-        image: "/professional-web-developer.png",
-        knowMe: "#",
+        name: "Sharmile S",
+        role: "Web Team Lead",
+        image: "/sharmile.png",
+      },
+      {
+        name: "Sri Ram R",
+        role: "Web Team Member",
+        image: "/sri.png",
+      },
+      {
+        name: "B Jashwanth Kumar",
+        role: "Web Team Member",
+        image: "/jaswanth.png",
       },
     ],
     "Faculty Coordinator": [
@@ -311,7 +320,7 @@ const TeamsSection = () => {
         name: "Faculty Member",
         role: "Faculty Coordinator",
         image: "/placeholder-38bbr.png",
-        knowMe: "#",
+        
       },
     ],
   }
@@ -341,11 +350,11 @@ const TeamsSection = () => {
         </div>
 
         {/* Team Members Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+        <div className="flex flex-wrap justify-center gap-6">
           {teams[selectedTeam].map((member, index) => (
             <div
               key={index}
-              className="group relative bg-black/40 backdrop-blur-sm border border-gray-700 rounded-lg p-6 hover:border-green-400 transition-all duration-300 animate-slide-in-up"
+              className="group relative bg-black/40 backdrop-blur-sm border border-gray-700 rounded-lg p-6 hover:border-green-400 transition-all duration-300 animate-slide-in-up w-72 h-auto"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-green-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
@@ -364,10 +373,6 @@ const TeamsSection = () => {
                 </h3>
 
                 <p className="text-yellow-400 text-sm mb-4 font-semibold">{member.role}</p>
-
-                <button className="px-4 py-2 bg-green-600 hover:bg-green-500 text-white rounded-full text-sm font-semibold transition-colors duration-300 transform group-hover:scale-105">
-                  Know Me
-                </button>
               </div>
             </div>
           ))}
@@ -377,48 +382,68 @@ const TeamsSection = () => {
   )
 }
 
-const SponsorsSection = () => (
-  <div className="min-h-screen flex flex-col items-center justify-center px-4 py-20">
-    <div className="max-w-6xl mx-auto text-center">
-      <h2 className="font-pixel text-3xl md:text-5xl mb-12 text-green-400 animate-slide-in-down">Sponsors</h2>
+const SponsorsSection: React.FC = () => {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-20">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="font-pixel text-3xl md:text-5xl mb-12 text-green-400 animate-slide-in-down">
+          Sponsors
+        </h2>
 
-      <div className="relative">
-        {/* Decorative border */}
-        <div className="absolute inset-0 border-2 border-green-400/30 rounded-2xl transform rotate-1"></div>
-        <div className="absolute inset-0 border-2 border-purple-400/20 rounded-2xl transform -rotate-1"></div>
+        <div className="relative">
+          {/* Decorative borders */}
+          <div className="absolute inset-0 border-2 border-green-400/30 rounded-2xl transform rotate-1"></div>
+          <div className="absolute inset-0 border-2 border-purple-400/20 rounded-2xl transform -rotate-1"></div>
 
-        <div className="relative bg-black/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-16 hover:border-green-400 transition-all duration-500">
-          <div className="space-y-8">
-            <div className="text-6xl md:text-8xl animate-pulse">🚀</div>
+          <div className="relative bg-black/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-16 hover:border-green-400 transition-all duration-500">
+            <div className="space-y-8">
+              <div className="text-6xl md:text-8xl animate-pulse">🚀</div>
 
-            <h3 className="font-pixel text-2xl md:text-4xl text-purple-400 mb-4">Coming Soon</h3>
+              {/* Changed heading */}
+              <h3 className="font-pixel text-2xl md:text-4xl text-purple-400 mb-4">
+                Want to sponsor us … ?
+              </h3>
 
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              We're working with amazing sponsors to bring you the best hackathon experience. Stay tuned for exciting
-              announcements!
-            </p>
+              <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                We’re working with amazing sponsors to bring you the best hackathon
+                experience. Download our sponsorship brochure below!
+              </p>
 
-            <div className="flex justify-center space-x-4">
-              <div className="w-3 h-3 bg-green-400 rounded-full animate-bounce"></div>
-              <div className="w-3 h-3 bg-purple-400 rounded-full animate-bounce delay-100"></div>
-              <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce delay-200"></div>
+              {/* Button to download brochure */}
+              <div>
+                <a
+                  href="/brochure.pdf" // put brochure.pdf inside /public folder
+                  download="EWB_Sponsorship_Brochure.pdf" // optional custom filename
+                  className="inline-block bg-green-500 text-black font-semibold px-6 py-3 rounded-lg hover:bg-green-400 transition-colors duration-300"
+                >
+                  Download Brochure
+                </a>
+              </div>
+
+              {/* Decorative bouncing dots */}
+              <div className="flex justify-center space-x-4 mt-6">
+                <div className="w-3 h-3 bg-green-400 rounded-full animate-bounce"></div>
+                <div className="w-3 h-3 bg-purple-400 rounded-full animate-bounce delay-100"></div>
+                <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce delay-200"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-)
+  );
+};
+
 
 const FAQSection = () => {
   const faqs = [
     {
-      question: "What is HackElite '24?",
+      question: "What is Hackerrupt '25?",
       answer:
         "HackElite '24 is a premier hackathon event where developers, designers, and innovators come together to build amazing solutions in 24 hours. It's a platform to showcase your skills, learn new technologies, and network with like-minded individuals.",
     },
     {
-      question: "Who can participate in HackElite '24?",
+      question: "Who can participate in  Hackerrupt '25?",
       answer:
         "HackElite '24 is open to all students, professionals, and tech enthusiasts. Whether you're a beginner or an expert, everyone is welcome to participate and contribute their unique skills to create innovative solutions.",
     },
@@ -428,7 +453,7 @@ const FAQSection = () => {
         "Teams can have a minimum of 2 members and a maximum of 4 members. You can form teams with your friends or join other participants during the team formation session at the event.",
     },
     {
-      question: "What is the format of HackElite '24?",
+      question: "What is the format of  Hackerrupt '25?",
       answer:
         "HackElite '24 is a 24-hour hackathon where teams work on building solutions for various problem statements. The event includes mentorship sessions, workshops, networking opportunities, and ends with project presentations and awards.",
     },
@@ -472,28 +497,27 @@ const FAQSection = () => {
 
 const GallerySection = () => {
   const galleryImages = [
-    "/sample.png",
+    "/gallery1.jpg",
     "/gallery2.jpg",
     "/gallery3.jpg",
     "/gallery4.jpg",
     "/gallery5.jpg",
-  ]
+  ];
 
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => setCurrentIndex((p) => (p + 1) % galleryImages.length)
-  const prevSlide = () => setCurrentIndex((p) => (p - 1 + galleryImages.length) % galleryImages.length)
+  const nextSlide = () => setCurrentIndex((p) => (p + 1) % galleryImages.length);
+  const prevSlide = () => setCurrentIndex((p) => (p - 1 + galleryImages.length) % galleryImages.length);
 
   return (
-    // Transparent section; NO local background. Sits above the page's animated canvas.
-    <section id="gallery" className="relative z-10 w-full min-h-screen py-16">
+    <section id="gallery" className="relative z-10 w-full min-h-screen py-12 px-4">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="font-pixel text-3xl md:text-5xl mb-8 text-green-400 tracking-wide">
           GALLERY
         </h2>
 
-        {/* Carousel wrapper with light glassy panel so the animated bg shows through */}
-        <div className="relative overflow-hidden rounded-2xl border border-green-500/40 bg-black/30 backdrop-blur-sm shadow-xl">
+        {/* Carousel */}
+        <div className="relative overflow-hidden rounded-xl border border-green-500/40 bg-black/30 backdrop-blur-sm shadow-xl">
           {/* Track */}
           <div
             className="flex transition-transform duration-700"
@@ -504,7 +528,7 @@ const GallerySection = () => {
                 <img
                   src={img}
                   alt={`Gallery ${i + 1}`}
-                  className="w-full h-[450px] object-cover"
+                  className="w-full h-60 sm:h-80 md:h-[450px] object-cover"
                 />
               </div>
             ))}
@@ -514,8 +538,7 @@ const GallerySection = () => {
           <button
             onClick={prevSlide}
             aria-label="Previous"
-            className="absolute top-1/2 left-4 -translate-y-1/2 h-12 w-12 rounded-full bg-green-500 text-black text-xl
-                       shadow-lg hover:bg-green-400 transition focus:outline-none"
+            className="absolute top-1/2 left-2 sm:left-4 -translate-y-1/2 h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full bg-green-500 text-black text-lg sm:text-xl shadow-lg hover:bg-green-400 transition"
           >
             &#8592;
           </button>
@@ -524,8 +547,7 @@ const GallerySection = () => {
           <button
             onClick={nextSlide}
             aria-label="Next"
-            className="absolute top-1/2 right-4 -translate-y-1/2 h-12 w-12 rounded-full bg-green-500 text-black text-xl
-                       shadow-lg hover:bg-green-400 transition focus:outline-none"
+            className="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2 h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 rounded-full bg-green-500 text-black text-lg sm:text-xl shadow-lg hover:bg-green-400 transition"
           >
             &#8594;
           </button>
@@ -538,7 +560,7 @@ const GallerySection = () => {
               key={i}
               onClick={() => setCurrentIndex(i)}
               aria-label={`Go to slide ${i + 1}`}
-              className={`h-2.5 w-2.5 rounded-full transition ${
+              className={`h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full transition ${
                 currentIndex === i ? "bg-green-400" : "bg-gray-600 hover:bg-gray-500"
               }`}
             />
@@ -546,8 +568,9 @@ const GallerySection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
 
 const ContactSection = () => {
   return (
@@ -561,58 +584,72 @@ const ContactSection = () => {
           </h2>
           <p className="mt-2">International Hackathon</p>
 
-          <div className="flex space-x-4 mt-4">
-            <a href="https://github.com" target="_blank" className="hover:text-green-400">
-              <i className="bi bi-github text-xl"></i>
-            </a>
-            <a href="https://twitter.com" target="_blank" className="hover:text-green-400">
-              <i className="bi bi-twitter text-xl"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" className="hover:text-green-400">
-              <i className="bi bi-instagram text-xl"></i>
-            </a>
-            <a href="https://linkedin.com" target="_blank" className="hover:text-green-400">
-              <i className="bi bi-linkedin text-xl"></i>
-            </a>
-            <a href="https://discord.gg" target="_blank" className="hover:text-green-400">
-              <i className="bi bi-discord text-xl"></i>
-            </a>
-          </div>
+          {/* Contact Us section */}
+  <div className="mt-4 text-gray-300">
+    <h3 className="text-lg font-semibold text-green-400 flex items-center space-x-2">
+      <i className="bi bi-telephone-fill"></i>
+      <span>Contact Us</span>
+    </h3>
+
+    <div className="mt-3 space-y-4">
+      {/* Contact 1 */}
+      <div>
+        <p className="flex items-center space-x-2">
+          <i className="bi bi-person-fill text-purple-400"></i>
+          <span className="font-medium">Mithun S</span>
+        </p>
+        <p className="flex items-center space-x-2 ml-6 mt-1">
+          <i className="bi bi-telephone text-green-400"></i>
+          <a href="tel:+917010341676" className="hover:text-green-400">
+            +91 70103 41676
+          </a>
+        </p>
+      </div>
+
+      {/* Contact 2 */}
+      <div>
+        <p className="flex items-center space-x-2">
+          <i className="bi bi-person-fill text-purple-400"></i>
+          <span className="font-medium">Kiran M S</span>
+        </p>
+        <p className="flex items-center space-x-2 ml-6 mt-1">
+          <i className="bi bi-telephone text-green-400"></i>
+          <a href="tel:+918825594439" className="hover:text-green-400">
+            +91 88255 94439
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
         </div>
 
         {/* Column 2: Venue */}
         <div>
-          <h3 className="text-white font-semibold mb-4">Venue Address</h3>
+          <h3 className="text-green-400 font-semibold mb-4">Venue Address</h3>
           <p>
             Sri Venkateswara College Of Engineering, <br />
             Sriperumbudur,Kanchipuram dt. <br />
             Chennai, Tamil Nadu – 600123
           </p>
 
-          <h3 className="text-white font-semibold mt-6 mb-2">Branding Guidelines</h3>
-          <a href="#" className="text-green-400 hover:underline">
+          <h3 className="text-green-400 font-semibold mt-6 mb-2">Branding Guidelines</h3>
+          <a href="#" className="text-white-400 hover:underline">
             SVCE Branding
           </a>
         </div>
 
         {/* Column 3: Links */}
         <div>
-          <h3 className="text-white font-semibold mb-4">Additional Links</h3>
+          <h3 className="text-green-400 font-semibold mb-4">Additional Links</h3>
           <ul className="space-y-2">
             <li><a href="https://ace-interrupt.netlify.app/home" className="hover:text-green-400">ACE website</a></li>
             <li><a href="https://www.svce.ac.in/" className="hover:text-green-400">SVCE website</a></li>
-          </ul>
-
-          <h3 className="text-white font-semibold mt-6 mb-2">Past Events</h3>
-          <ul className="space-y-2">
-            <li><a href="#" className="hover:text-green-400">Hackerrupt '24</a></li>
-            <li><a href="#" className="hover:text-green-400">Interrupt '24</a></li>
           </ul>
         </div>
 
         {/* Column 4: Map */}
         <div>
-          <h3 className="text-white font-semibold mb-4">Location</h3>
+          <h3 className="text-green-400 font-semibold mb-4">Location</h3>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.4372901100777!2d79.94934537417062!3d12.959889387352392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a528cfa7c3a2b13%3A0xf4766f6f43c5a1d2!2sSri%20Venkateswara%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1726847000000!5m2!1sen!2sin"
             width="100%"
@@ -636,6 +673,8 @@ const ContactSection = () => {
 export default function App() {
   const canvasRef = useRef(null)
   const [activeSection, setActiveSection] = useState("home")
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const sectionRefs = {
     home: useRef(null),
     about: useRef(null),
@@ -819,42 +858,53 @@ export default function App() {
       {/* Background Gradient */}
       <div className="fixed top-0 left-0 w-full h-1/2 bg-gradient-to-b from-green-900/50 to-transparent z-0"></div>
 
-      {/* Header */}
-      <header className="fixed top-0 left-0 w-full p-4 z-20 backdrop-blur-md">
-        <div className="container mx-auto flex justify-center items-center bg-black/20 backdrop-blur-sm border-t-2 border-green-400 py-2">
-          <nav className="hidden md:flex items-center space-x-4">
-            <NavLink onClick={() => scrollToSection("home")} isActive={activeSection === "home"}>
-              Home
-            </NavLink>
-            <NavLink onClick={() => scrollToSection("about")} isActive={activeSection === "about"}>
-              About
-            </NavLink>
-            <NavLink onClick={() => scrollToSection("domains")} isActive={activeSection === "domains"}>
-              Domains
-            </NavLink>
-            <NavLink onClick={() => scrollToSection("timeline")} isActive={activeSection === "timeline"}>
-              Timeline
-            </NavLink>
+{/* Header */}
+<header className="fixed top-0 left-0 w-full p-4 z-20 backdrop-blur-md">
+  <div className="container mx-auto flex justify-between items-center bg-black/20 backdrop-blur-sm border-t-2 border-green-400 py-2 px-4">
 
-            <NavLink onClick={() => scrollToSection("teams")} isActive={activeSection === "teams"}>
-              Team
-            </NavLink>
-            <NavLink onClick={() => scrollToSection("sponsors")} isActive={activeSection === "sponsors"}>
-              Sponsors
-            </NavLink>
-            <NavLink onClick={() => scrollToSection("faq")} isActive={activeSection === "faq"}>
-              FAQ
-            </NavLink>
-            <NavLink onClick={() => scrollToSection("gallery")} isActive={activeSection === "gallery"}>
-              Gallery
-            </NavLink>
-            <NavLink onClick={() => scrollToSection("contact")} isActive={activeSection === "contact"}>
-              Contact Us
-            </NavLink>
-          </nav>
-          <div className="md:hidden text-lg font-bold">HACKERRUPT</div>
-        </div>
-      </header>
+    {/* Logo */}
+    <div className="text-lg font-bold text-green-400">HACKERRUPT</div>
+
+    {/* Desktop Navigation */}
+    <nav className="hidden md:flex items-center space-x-4 text-sm sm:text-base">
+      <NavLink onClick={() => scrollToSection("home")} isActive={activeSection === "home"}>Home</NavLink>
+      <NavLink onClick={() => scrollToSection("about")} isActive={activeSection === "about"}>About</NavLink>
+      <NavLink onClick={() => scrollToSection("domains")} isActive={activeSection === "domains"}>Domains</NavLink>
+      <NavLink onClick={() => scrollToSection("timeline")} isActive={activeSection === "timeline"}>Timeline</NavLink>
+      <NavLink onClick={() => scrollToSection("teams")} isActive={activeSection === "teams"}>Team</NavLink>
+      <NavLink onClick={() => scrollToSection("sponsors")} isActive={activeSection === "sponsors"}>Sponsors</NavLink>
+      <NavLink onClick={() => scrollToSection("faq")} isActive={activeSection === "faq"}>FAQ</NavLink>
+      <NavLink onClick={() => scrollToSection("gallery")} isActive={activeSection === "gallery"}>Gallery</NavLink>
+      <NavLink onClick={() => scrollToSection("contact")} isActive={activeSection === "contact"}>Contact Us</NavLink>
+    </nav>
+
+    {/* Mobile Toggle Button */}
+    <button
+      className="md:hidden flex flex-col space-y-1.5 focus:outline-none"
+      onClick={() => setMenuOpen(!menuOpen)}
+    >
+      <span className="block w-6 h-0.5 bg-green-400"></span>
+      <span className="block w-6 h-0.5 bg-green-400"></span>
+      <span className="block w-6 h-0.5 bg-green-400"></span>
+    </button>
+  </div>
+
+  {/* Mobile Dropdown Menu */}
+  {menuOpen && (
+    <div className="md:hidden bg-black/95 border-t border-green-400 flex flex-col items-center py-6 space-y-4">
+      <NavLink onClick={() => { scrollToSection("home"); setMenuOpen(false); }} isActive={activeSection === "home"}>Home</NavLink>
+      <NavLink onClick={() => { scrollToSection("about"); setMenuOpen(false); }} isActive={activeSection === "about"}>About</NavLink>
+      <NavLink onClick={() => { scrollToSection("domains"); setMenuOpen(false); }} isActive={activeSection === "domains"}>Domains</NavLink>
+      <NavLink onClick={() => { scrollToSection("timeline"); setMenuOpen(false); }} isActive={activeSection === "timeline"}>Timeline</NavLink>
+      <NavLink onClick={() => { scrollToSection("teams"); setMenuOpen(false); }} isActive={activeSection === "teams"}>Team</NavLink>
+      <NavLink onClick={() => { scrollToSection("sponsors"); setMenuOpen(false); }} isActive={activeSection === "sponsors"}>Sponsors</NavLink>
+      <NavLink onClick={() => { scrollToSection("faq"); setMenuOpen(false); }} isActive={activeSection === "faq"}>FAQ</NavLink>
+      <NavLink onClick={() => { scrollToSection("gallery"); setMenuOpen(false); }} isActive={activeSection === "gallery"}>Gallery</NavLink>
+      <NavLink onClick={() => { scrollToSection("contact"); setMenuOpen(false); }} isActive={activeSection === "contact"}>Contact Us</NavLink>
+    </div>
+  )}
+</header>
+
 
       {/* Social Links */}
       <div className="fixed left-4 bottom-4 z-20 hidden md:flex flex-col items-center space-y-4">
