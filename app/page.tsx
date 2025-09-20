@@ -471,83 +471,81 @@ const FAQSection = () => {
 }
 
 const GallerySection = () => {
-  const [selectedImage, setSelectedImage] = useState(null)
-
   const galleryImages = [
-    "/hackathon-team-coding-together.jpg",
-    "/hackathon-presentation-stage.jpg",
-    "/hackathon-winners-celebration.jpg",
-    "/hackathon-networking-session.jpg",
-    "/placeholder-taihd.png",
-    "/hackathon-opening-ceremony.jpg",
-    "/placeholder-2230u.png",
-    "/placeholder-0fu9t.png",
-    "/placeholder-eb43c.png",
-    "/placeholder-0e0vw.png",
-    "/hackathon-collaboration.png",
-    "/placeholder-ujkpd.png",
-    "/placeholder-gnv9u.png",
-    "/placeholder-wr6c1.png",
-    "/placeholder-jothk.png",
+    "/sample.png",
+    "/gallery2.jpg",
+    "/gallery3.jpg",
+    "/gallery4.jpg",
+    "/gallery5.jpg",
   ]
 
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const nextSlide = () => setCurrentIndex((p) => (p + 1) % galleryImages.length)
+  const prevSlide = () => setCurrentIndex((p) => (p - 1 + galleryImages.length) % galleryImages.length)
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-20">
-      <div className="max-w-7xl mx-auto w-full">
-        <h2 className="font-pixel text-3xl md:text-5xl mb-12 text-center text-green-400 animate-slide-in-down">
-          Gallery
+    // Transparent section; NO local background. Sits above the page's animated canvas.
+    <section id="gallery" className="relative z-10 w-full min-h-screen py-16">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="font-pixel text-3xl md:text-5xl mb-8 text-green-400 tracking-wide">
+          GALLERY
         </h2>
 
-        {/* Hexagonal Grid Layout */}
-        <div className="relative">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
-            {galleryImages.map((image, index) => (
-              <div
-                key={index}
-                className="group relative cursor-pointer transform hover:scale-105 transition-all duration-300"
-                onClick={() => setSelectedImage(image)}
-                style={{
-                  clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-                  aspectRatio: "1",
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        {/* Carousel wrapper with light glassy panel so the animated bg shows through */}
+        <div className="relative overflow-hidden rounded-2xl border border-green-500/40 bg-black/30 backdrop-blur-sm shadow-xl">
+          {/* Track */}
+          <div
+            className="flex transition-transform duration-700"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {galleryImages.map((img, i) => (
+              <div key={i} className="w-full flex-shrink-0">
                 <img
-                  src={image || "/placeholder.svg"}
-                  alt={`Gallery image ${index + 1}`}
-                  className="w-full h-full object-cover group-hover:brightness-110 transition-all duration-300"
-                  style={{
-                    clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-                  }}
+                  src={img}
+                  alt={`Gallery ${i + 1}`}
+                  className="w-full h-[450px] object-cover"
                 />
               </div>
             ))}
           </div>
+
+          {/* Left arrow */}
+          <button
+            onClick={prevSlide}
+            aria-label="Previous"
+            className="absolute top-1/2 left-4 -translate-y-1/2 h-12 w-12 rounded-full bg-green-500 text-black text-xl
+                       shadow-lg hover:bg-green-400 transition focus:outline-none"
+          >
+            &#8592;
+          </button>
+
+          {/* Right arrow */}
+          <button
+            onClick={nextSlide}
+            aria-label="Next"
+            className="absolute top-1/2 right-4 -translate-y-1/2 h-12 w-12 rounded-full bg-green-500 text-black text-xl
+                       shadow-lg hover:bg-green-400 transition focus:outline-none"
+          >
+            &#8594;
+          </button>
         </div>
 
-        {/* Lightbox Modal */}
-        {selectedImage && (
-          <div
-            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedImage(null)}
-          >
-            <div className="relative max-w-4xl max-h-full">
-              <img
-                src={selectedImage || "/placeholder.svg"}
-                alt="Gallery preview"
-                className="max-w-full max-h-full object-contain rounded-lg"
-              />
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 text-white hover:text-green-400 text-2xl font-bold bg-black/50 rounded-full w-10 h-10 flex items-center justify-center"
-              >
-                ×
-              </button>
-            </div>
-          </div>
-        )}
+        {/* Dots */}
+        <div className="mt-4 flex justify-center gap-2">
+          {galleryImages.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentIndex(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`h-2.5 w-2.5 rounded-full transition ${
+                currentIndex === i ? "bg-green-400" : "bg-gray-600 hover:bg-gray-500"
+              }`}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 
